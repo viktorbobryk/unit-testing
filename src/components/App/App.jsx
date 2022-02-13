@@ -1,7 +1,8 @@
-import {useState, useEffect} from 'react'
-import List from '../List'
+import {useState, useEffect} from 'react';
+import List from '../List';
+import Search from '../Search/Search';
+import Async from '../Async/Async';
 import './App.css';
-import Search from '../Search/Search'
 
 const data = [
     'HTML',
@@ -30,6 +31,7 @@ const App = () => {
           </Search>
          <List items={items}/>
       </div>
+      <Async/>
     </div>
   );
 }

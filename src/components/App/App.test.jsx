@@ -1,12 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import {cleanup, render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
 describe('App component', () => {
-  test('App renders', () => {
+  afterEach(cleanup)
+  test('App renders', async () => {
     render(<App />);
 
-    expect(screen.getByRole('list')).toBeInTheDocument();
+    expect(await screen.findAllByRole('list')).not.toHaveLength(0);
     expect(screen.getByText('Find course:')).toBeInTheDocument();
   });
 
